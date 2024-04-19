@@ -23,7 +23,7 @@ public class Brand extends BaseEntity<Integer> {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "brand")
-    private List<Model> models;
+//    @OneToMany(mappedBy = "brand")
+//    private List<Model> models;
 
 }

@@ -1,5 +1,7 @@
 package com.turkcell.rentacar.inventoryService.business.rules;
 
+import com.turkcell.rentacar.inventoryService.business.messages.Messages;
+import com.turkcell.rentacar.inventoryService.core.business.abstracts.MessageService;
 import com.turkcell.rentacar.inventoryService.core.crossCuttingConcerns.exceptions.types.BusinessException;
 import com.turkcell.rentacar.inventoryService.dataAccess.abstracts.BrandRepository;
 import com.turkcell.rentacar.inventoryService.entities.concretes.Brand;
@@ -12,11 +14,12 @@ import java.util.Optional;
 @AllArgsConstructor
 public class BrandBusinessRules {
     BrandRepository brandRepository;
+    MessageService messageService;
 
     public void brandNameCannotBeDuplicated(String brandName) {
         Optional<Brand> brand = brandRepository.findByNameIgnoreCase(brandName);
         if (brand.isPresent()) {
-            throw new BusinessException("BrandExists");
+            throw new BusinessException(messageService.getMessage(Messages.BrandErrors.BRAND_NAME_EXISTS));
         }
     }
 

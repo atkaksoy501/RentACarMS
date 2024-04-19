@@ -8,6 +8,7 @@ import com.turkcell.rentacar.inventoryService.business.dtos.responses.Brand.GetA
 import com.turkcell.rentacar.inventoryService.business.dtos.responses.Brand.GetBrandResponseById;
 import com.turkcell.rentacar.inventoryService.business.dtos.responses.Brand.UpdatedBrandResponse;
 import com.turkcell.rentacar.inventoryService.business.rules.BrandBusinessRules;
+import com.turkcell.rentacar.inventoryService.core.utilities.mapping.ModelMapperService;
 import com.turkcell.rentacar.inventoryService.dataAccess.abstracts.BrandRepository;
 import com.turkcell.rentacar.inventoryService.entities.concretes.Brand;
 import lombok.AllArgsConstructor;
